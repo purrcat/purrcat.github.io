@@ -1,2 +1,1 @@
-# purrcat.github.io
-purrcat
+# boredocto.github.io
