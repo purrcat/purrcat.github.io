@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0x5b45c42db2efd3121efe52c61f60cc1346729fa1",
+  "SCAN_LINK": "https://polygonscan.com/token/0x5b45c42db2efd3121efe52c61f60cc1346729fa1",
+  "NETWORK": {
+    "NAME": "Polygon",
+    "SYMBOL": "Purr",
+    "ID": 137
+  },
+  "NFT_NAME": "Purrcat Lover",
+  "SYMBOL": "PURRCAT",
+  "MAX_SUPPLY": 500,
+  "WEI_COST": 50000000000000000000,
+  "DISPLAY_COST": 50,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "Opeansea",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/purrcat-lover",
+  "SHOW_BACKGROUND": true
+}
