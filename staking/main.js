@@ -44,7 +44,7 @@ async function getMts() {
         stakedNFT = await spccContract.methods.stakedNFTSByUser(account).call();
         SPCCbalance = await spccContract.methods.balanceOf(account).call();
         showAccount.innerHTML = account;
-        balance.innerHTML = (Math.round(SPCCbalance / 1000000000000000000));
+        balance.innerHTML = (Math.round(PURRbalance / 1000000000000000000));
 
         Nfts = Nfts.filter(Number);
         stakedNFT = stakedNFT.filter(Number);
@@ -127,7 +127,7 @@ async function getMts() {
 async function getTotalWallets() {
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
-    totalWallet = await spccContract.methods.amountOfStakers().call();
+    totalWallet = await purrContract.methods.amountOfStakers().call();
     totalWallets.innerHTML = totalWallet;
 }
 
@@ -152,11 +152,11 @@ async function approveMtsContract() {
 }
 
 //stakes all tokens
-async function stakeSpccBatch() {
+async function stakePurrBatch() {
     let baseFee = String(33000000000);
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
-    await spccContract.methods.stakeBatch(Nfts).send({ from: account, maxFeePerGas: baseFee, maxPriorityFeePerGas: baseFee })
+    await purrContract.methods.stakeBatch(Nfts).send({ from: account, maxFeePerGas: baseFee, maxPriorityFeePerGas: baseFee })
 }
 
 //reloads the page and disconnects wallet
@@ -165,19 +165,19 @@ async function logout() {
 }
 
 //unstakes all tokens
-async function unStakeSpccBatch() {
+async function unStakePurrBatch() {
     let baseFee = String(33000000000);
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
-    stakedNfts = await spccContract.methods.stakedNFTSByUser(account).call();
-    await spccContract.methods.unstakeBatch(stakedNfts).send({ from: account, maxFeePerGas: baseFee, maxPriorityFeePerGas: baseFee })
+    stakedNfts = await purrContract.methods.stakedNFTSByUser(account).call();
+    await purrContract.methods.unstakeBatch(stakedNfts).send({ from: account, maxFeePerGas: baseFee, maxPriorityFeePerGas: baseFee })
 }
 //call contract and claims tokens
 async function claimAllTokens() {
     let baseFee = String(33000000000);
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
-    await spccContract.methods.harvestBatch(account).send({ from: account, maxFeePerGas: baseFee, maxPriorityFeePerGas: baseFee })
+    await purrContract.methods.harvestBatch(account).send({ from: account, maxFeePerGas: baseFee, maxPriorityFeePerGas: baseFee })
 }
 
 async function stakeSelectedNfts() {
@@ -185,7 +185,7 @@ async function stakeSelectedNfts() {
     selectedNft = document.querySelector('.t.selected')
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
-    // await spccContract.methods.stake.estimateGas
+    // await purrContract.methods.stake.estimateGas
     await spccContract.methods.stake(selectedNft.innerHTML).send({ from: account, maxFeePerGas: baseFee, maxPriorityFeePerGas: baseFee })
 }
 
@@ -194,7 +194,7 @@ async function unStakeSelectedNfts() {
     selectedNft = document.querySelector('.t.selected')
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
     const account = accounts[0];
-    await spccContract.methods.unstake(selectedNft.innerHTML).send({ from: account, maxFeePerGas: baseFee, maxPriorityFeePerGas: baseFee })
+    await purrContract.methods.unstake(selectedNft.innerHTML).send({ from: account, maxFeePerGas: baseFee, maxPriorityFeePerGas: baseFee })
 }
 
 
@@ -208,7 +208,7 @@ async function calculateBalance() {
     if (unbalance.innerHTML.length == 0) {
 
         for (let x of combList) {
-            nftBal = await spccContract.methods.pendingRewards(account, x).call();
+            nftBal = await purrContract.methods.pendingRewards(account, x).call();
             int = parseInt(nftBal);
             calcBal += int;
         }
@@ -232,11 +232,11 @@ approveButton.addEventListener('click', () => {
 });
 
 stakeBatchButton.addEventListener('click', () => {
-    stakeSpccBatch();
+    stakePurrBatch();
 });
 
 unStakeBatchButton.addEventListener('click', () => {
-    unStakeSpccBatch();
+    unStakePurrBatch();
 });
 
 ethereumButton.addEventListener('click', () => {
