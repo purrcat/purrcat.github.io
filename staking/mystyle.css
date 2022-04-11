@@ -59,7 +59,7 @@ h6 {
 }
 
 input {
-    background-color: #00ff08;
+    background-color: #ffb300;
     border: none;
     color: rgb(0, 0, 0);
     padding: 15px 32px;
@@ -74,7 +74,7 @@ input {
 }
 
 button {
-    background-color: #00ff08;
+    background-color: #ffb300;
     border: none;
     color: rgb(0, 0, 0);
     padding: 15px 32px;
@@ -124,7 +124,7 @@ a:link {
 }
 
 .t {
-    background-color: #00ff08;
+    background-color: #ffb300;
     border: none;
     color: rgb(0, 0, 0);
     padding: 7.5px 16px;
@@ -204,7 +204,7 @@ body {
 
 .card {
     border-style: solid;
-    border-color: #00ff08;
+    border-color: #ffb300;
     padding: 16px;
     text-align: center;
     background-color: #000000;
@@ -214,7 +214,7 @@ body {
 
 .maincard {
     border-style: solid;
-    border-color: #00ff08;
+    border-color: #ffb300;
     padding: 16px;
     text-align: center;
     background-color: #000000;
