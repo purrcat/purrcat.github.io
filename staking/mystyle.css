@@ -74,7 +74,7 @@ input {
 }
 
 button {
-    background-color: #ffb300;
+    background-color: #ce2900;
     border: none;
     color: rgb(0, 0, 0);
     padding: 15px 32px;
@@ -124,7 +124,7 @@ a:link {
 }
 
 .t {
-    background-color: #ffb300;
+    background-color: #ce2900;
     border: none;
     color: rgb(0, 0, 0);
     padding: 7.5px 16px;
@@ -144,11 +144,11 @@ a:link {
 
 @media (min-width: 650px) {
     .t:hover {
-        background-color: #000000;
+        background-color: #ffcc00;
         color: rgb(0, 255, 34)
     }
     button:hover {
-        background-color: #000000;
+        background-color: #ffcc00;
         color: rgb(0, 255, 34)
     }
 }
