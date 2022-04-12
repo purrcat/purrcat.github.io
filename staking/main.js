@@ -143,7 +143,7 @@ async function getTotalMTSstaked() {
 getTotalMTSstaked();
 
 
-//approve the Species Coin contract to transfer your MetaSpecies
+//approve 
 async function approveMtsContract() {
     let baseFee = String(33000000000);
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
